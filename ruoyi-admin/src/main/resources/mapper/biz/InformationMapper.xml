@@ -1,0 +1,1227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.web.mapper.biz.InformationMapper">
+
+    <resultMap type="Information" id="InformationResult">
+        <result property="iD1" column="ID1"/>
+        <result property="id" column="id"/>
+        <result property="num" column="num"/>
+        <result property="name" column="name"/>
+        <result property="hls" column="hls"/>
+        <result property="sx" column="sx"/>
+        <result property="sex" column="sex"/>
+        <result property="born" column="born"/>
+        <result property="pay" column="pay"/>
+        <result property="level" column="level"/>
+        <result property="con" column="con"/>
+        <result property="conphone" column="conphone"/>
+        <result property="phone" column="phone"/>
+        <result property="mobile" column="mobile"/>
+        <result property="st" column="st"/>
+        <result property="ct" column="ct"/>
+        <result property="dt" column="dt"/>
+        <result property="idcard" column="idcard"/>
+        <result property="unit" column="unit"/>
+        <result property="unitphone" column="unitphone"/>
+        <result property="home" column="home"/>
+        <result property="score1" column="score1"/>
+        <result property="score2" column="score2"/>
+        <result property="date1" column="date1"/>
+        <result property="date2" column="date2"/>
+        <result property="date3" column="date3"/>
+        <result property="letter" column="letter"/>
+        <result property="fzzt" column="fzzt"/>
+        <result property="fxsj" column="fxsj"/>
+        <result property="czsj" column="czsj"/>
+        <result property="djsj" column="djsj"/>
+        <result property="schooling" column="schooling"/>
+        <result property="electric" column="electric"/>
+        <result property="ceyi" column="ceyi"/>
+        <result property="fang" column="fang"/>
+        <result property="zipai" column="zipai"/>
+        <result property="shou" column="shou"/>
+        <result property="burn" column="burn"/>
+        <result property="ton" column="ton"/>
+        <result property="check" column="check"/>
+        <result property="pic" column="pic"/>
+        <result property="pic2" column="pic2"/>
+        <result property="picdb" column="picdb"/>
+        <result property="rcmd" column="rcmd"/>
+        <result property="time" column="time"/>
+        <result property="intro" column="intro"/>
+        <result property="sg" column="sg"/>
+        <result property="tz" column="tz"/>
+        <result property="xy" column="xy"/>
+        <result property="ej" column="ej"/>
+        <result property="bsl" column="bsl"/>
+        <result property="lsz" column="lsz"/>
+        <result property="lsy" column="lsy"/>
+        <result property="jsz" column="jsz"/>
+        <result property="jsy" column="jsy"/>
+        <result property="hbz" column="hbz"/>
+        <result property="admin" column="admin"/>
+        <result property="ip" column="ip"/>
+        <result property="tj" column="tj"/>
+        <result property="djr" column="djr"/>
+        <result property="xx" column="xx"/>
+        <result property="bx" column="bx"/>
+        <result property="nf" column="nf"/>
+        <result property="lastlogin" column="lastlogin"/>
+        <result property="ipshow" column="ipshow"/>
+        <result property="homephone" column="homephone"/>
+        <result property="lb1" column="lb1"/>
+        <result property="lb2" column="lb2"/>
+        <result property="lb3" column="lb3"/>
+        <result property="xiang" column="xiang"/>
+        <result property="mail" column="mail"/>
+        <result property="xingp" column="xingp"/>
+        <result property="mingp" column="mingp"/>
+        <result property="mingzu" column="mingzu"/>
+        <result property="chushengdi" column="chushengdi"/>
+        <result property="jtphone" column="jtphone"/>
+        <result property="shouyigx" column="shouyigx"/>
+        <result property="shouyitel" column="shouyitel"/>
+        <result property="youbian" column="youbian"/>
+        <result property="wage" column="wage"/>
+        <result property="lmphone" column="lmphone"/>
+        <result property="leibie" column="leibie"/>
+        <result property="shouyi" column="shouyi"/>
+        <result property="lcpic" column="lcpic"/>
+        <result property="kspic" column="kspic"/>
+        <result property="lcmov" column="lcmov"/>
+        <result property="ksmov" column="ksmov"/>
+        <result property="cz" column="cz"/>
+        <result property="ny" column="ny"/>
+        <result property="ls" column="ls"/>
+        <result property="email" column="email"/>
+        <result property="xlfilename" column="xlfilename"/>
+        <result property="idzfilename" column="idzfilename"/>
+        <result property="idffilename" column="idffilename"/>
+        <result property="sms" column="sms"/>
+        <result property="smsDate" column="sms_date"/>
+        <result property="uemail" column="uemail"/>
+        <result property="uemailDate" column="uemail_date"/>
+        <result property="zsSms" column="zs_sms"/>
+        <result property="zsSmsDate" column="zs_sms_date"/>
+        <result property="zsEmail" column="zs_email"/>
+        <result property="zsEmailDate" column="zs_email_date"/>
+    </resultMap>
+
+    <sql id="selectInformationVo">
+        select * from information
+    </sql>
+
+    <select id="selectInformationList" parameterType="Information" resultMap="InformationResult">
+        <include refid="selectInformationVo"/>
+        <where>
+            <if test="iD1 != null ">and ID1 = #{iD1}
+            </if>
+            <if test="id != null  and id != '' ">and id = #{id}
+            </if>
+            <if test="num != null  and num != '' ">and num = #{num}
+            </if>
+            <if test="name != null  and name != '' ">and name = #{name}
+            </if>
+            <if test="hls != null  and hls != '' ">and hls = #{hls}
+            </if>
+            <if test="sx != null  and sx != '' ">and sx = #{sx}
+            </if>
+            <if test="sex != null  and sex != '' ">and sex = #{sex}
+            </if>
+            <if test="born != null  and born != '' ">and born = #{born}
+            </if>
+            <if test="pay != null  and pay != '' ">and pay = #{pay}
+            </if>
+            <if test="level != null  and level != '' ">and level = #{level}
+            </if>
+            <if test="con != null  and con != '' ">and con = #{con}
+            </if>
+            <if test="conphone != null  and conphone != '' ">and conphone = #{conphone}
+            </if>
+            <if test="phone != null  and phone != '' ">and phone = #{phone}
+            </if>
+            <if test="mobile != null  and mobile != '' ">and mobile = #{mobile}
+            </if>
+            <if test="st != null  and st != '' ">and st = #{st}
+            </if>
+            <if test="ct != null  and ct != '' ">and ct = #{ct}
+            </if>
+            <if test="dt != null  and dt != '' ">and dt = #{dt}
+            </if>
+            <if test="idcard != null  and idcard != '' ">and idcard = #{idcard}
+            </if>
+            <if test="unit != null  and unit != '' ">and unit = #{unit}
+            </if>
+            <if test="unitphone != null  and unitphone != '' ">and unitphone = #{unitphone}
+            </if>
+            <if test="home != null  and home != '' ">and home = #{home}
+            </if>
+            <if test="score1 != null  and score1 != '' ">and score1 = #{score1}
+            </if>
+            <if test="score2 != null  and score2 != '' ">and score2 = #{score2}
+            </if>
+            <if test="date1 != null  and date1 != '' ">and date1 = #{date1}
+            </if>
+            <if test="date2 != null  and date2 != '' ">and date2 = #{date2}
+            </if>
+            <if test="date3 != null  and date3 != '' ">and date3 = #{date3}
+            </if>
+            <if test="letter != null  and letter != '' ">and letter = #{letter}
+            </if>
+            <if test="fzzt != null  and fzzt != '' ">and fzzt = #{fzzt}
+            </if>
+            <if test="fxsj != null  and fxsj != '' ">and fxsj = #{fxsj}
+            </if>
+            <if test="czsj != null  and czsj != '' ">and czsj = #{czsj}
+            </if>
+            <if test="djsj != null  and djsj != '' ">and djsj = #{djsj}
+            </if>
+            <if test="schooling != null  and schooling != '' ">and schooling = #{schooling}
+            </if>
+            <if test="electric != null  and electric != '' ">and electric = #{electric}
+            </if>
+            <if test="ceyi != null  and ceyi != '' ">and ceyi = #{ceyi}
+            </if>
+            <if test="fang != null  and fang != '' ">and fang = #{fang}
+            </if>
+            <if test="zipai != null  and zipai != '' ">and zipai = #{zipai}
+            </if>
+            <if test="shou != null  and shou != '' ">and shou = #{shou}
+            </if>
+            <if test="burn != null  and burn != '' ">and burn = #{burn}
+            </if>
+            <if test="ton != null  and ton != '' ">and ton = #{ton}
+            </if>
+            <if test="check != null  and check != '' ">and check = #{check}
+            </if>
+            <if test="pic != null  and pic != '' ">and pic = #{pic}
+            </if>
+            <if test="pic2 != null  and pic2 != '' ">and pic2 = #{pic2}
+            </if>
+            <if test="picdb != null ">and picdb = #{picdb}
+            </if>
+            <if test="rcmd != null  and rcmd != '' ">and rcmd = #{rcmd}
+            </if>
+            <if test="time != null  and time != '' ">and time = #{time}
+            </if>
+            <if test="intro != null  and intro != '' ">and intro = #{intro}
+            </if>
+            <if test="sg != null  and sg != '' ">and sg = #{sg}
+            </if>
+            <if test="tz != null  and tz != '' ">and tz = #{tz}
+            </if>
+            <if test="xy != null  and xy != '' ">and xy = #{xy}
+            </if>
+            <if test="ej != null  and ej != '' ">and ej = #{ej}
+            </if>
+            <if test="bsl != null  and bsl != '' ">and bsl = #{bsl}
+            </if>
+            <if test="lsz != null  and lsz != '' ">and lsz = #{lsz}
+            </if>
+            <if test="lsy != null  and lsy != '' ">and lsy = #{lsy}
+            </if>
+            <if test="jsz != null  and jsz != '' ">and jsz = #{jsz}
+            </if>
+            <if test="jsy != null  and jsy != '' ">and jsy = #{jsy}
+            </if>
+            <if test="hbz != null  and hbz != '' ">and hbz = #{hbz}
+            </if>
+            <if test="admin != null  and admin != '' ">and admin = #{admin}
+            </if>
+            <if test="ip != null  and ip != '' ">and ip = #{ip}
+            </if>
+            <if test="tj != null  and tj != '' ">and tj = #{tj}
+            </if>
+            <if test="djr != null  and djr != '' ">and djr = #{djr}
+            </if>
+            <if test="xx != null  and xx != '' ">and xx = #{xx}
+            </if>
+            <if test="bx != null  and bx != '' ">and bx = #{bx}
+            </if>
+            <if test="nf != null ">and nf = #{nf}
+            </if>
+            <if test="lastlogin != null ">and lastlogin = #{lastlogin}
+            </if>
+            <if test="ipshow != null  and ipshow != '' ">and ipshow = #{ipshow}
+            </if>
+            <if test="homephone != null  and homephone != '' ">and homephone = #{homephone}
+            </if>
+            <if test="lb1 != null ">and lb1 = #{lb1}
+            </if>
+            <if test="lb2 != null ">and lb2 = #{lb2}
+            </if>
+            <if test="lb3 != null ">and lb3 = #{lb3}
+            </if>
+            <if test="xiang != null  and xiang != '' ">and xiang = #{xiang}
+            </if>
+            <if test="mail != null  and mail != '' ">and mail = #{mail}
+            </if>
+            <if test="xingp != null  and xingp != '' ">and xingp = #{xingp}
+            </if>
+            <if test="mingp != null  and mingp != '' ">and mingp = #{mingp}
+            </if>
+            <if test="mingzu != null  and mingzu != '' ">and mingzu = #{mingzu}
+            </if>
+            <if test="chushengdi != null  and chushengdi != '' ">and chushengdi = #{chushengdi}
+            </if>
+            <if test="jtphone != null  and jtphone != '' ">and jtphone = #{jtphone}
+            </if>
+            <if test="shouyigx != null  and shouyigx != '' ">and shouyigx = #{shouyigx}
+            </if>
+            <if test="shouyitel != null  and shouyitel != '' ">and shouyitel = #{shouyitel}
+            </if>
+            <if test="youbian != null  and youbian != '' ">and youbian = #{youbian}
+            </if>
+            <if test="wage != null  and wage != '' ">and wage = #{wage}
+            </if>
+            <if test="lmphone != null  and lmphone != '' ">and lmphone = #{lmphone}
+            </if>
+            <if test="leibie != null  and leibie != '' ">and leibie = #{leibie}
+            </if>
+            <if test="shouyi != null  and shouyi != '' ">and shouyi = #{shouyi}
+            </if>
+            <if test="lcpic != null  and lcpic != '' ">and lcpic = #{lcpic}
+            </if>
+            <if test="kspic != null  and kspic != '' ">and kspic = #{kspic}
+            </if>
+            <if test="lcmov != null  and lcmov != '' ">and lcmov = #{lcmov}
+            </if>
+            <if test="ksmov != null  and ksmov != '' ">and ksmov = #{ksmov}
+            </if>
+            <if test="cz != null  and cz != '' ">and cz = #{cz}
+            </if>
+            <if test="ny != null  and ny != '' ">and ny = #{ny}
+            </if>
+            <if test="ls != null  and ls != '' ">and ls = #{ls}
+            </if>
+            <if test="email != null  and email != '' ">and email = #{email}
+            </if>
+            <if test="xlfilename != null  and xlfilename != '' ">and xlfilename = #{xlfilename}
+            </if>
+            <if test="idzfilename != null  and idzfilename != '' ">and idzfilename = #{idzfilename}
+            </if>
+            <if test="idffilename != null  and idffilename != '' ">and idffilename = #{idffilename}
+            </if>
+            <if test="sms != null ">and sms = #{sms}
+            </if>
+            <if test="smsDate != null  and smsDate != '' ">and sms_date = #{smsDate}
+            </if>
+            <if test="uemail != null ">and uemail = #{uemail}
+            </if>
+            <if test="uemailDate != null  and uemailDate != '' ">and uemail_date = #{uemailDate}
+            </if>
+            <if test="zsSms != null ">and zs_sms = #{zsSms}
+            </if>
+            <if test="zsSmsDate != null  and zsSmsDate != '' ">and zs_sms_date = #{zsSmsDate}
+            </if>
+            <if test="zsEmail != null ">and zs_email = #{zsEmail}
+            </if>
+            <if test="zsEmailDate != null  and zsEmailDate != '' ">and zs_email_date = #{zsEmailDate}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectInformationById" parameterType="Integer" resultMap="InformationResult">
+        <include refid="selectInformationVo"/>
+        where ID1 = #{iD1}
+    </select>
+
+    <insert id="insertInformation" parameterType="Information" useGeneratedKeys="true" keyProperty="iD1">
+        insert into information
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null  and id != ''  ">id,
+            </if>
+            <if test="num != null  and num != ''  ">num,
+            </if>
+            <if test="name != null  and name != ''  ">name,
+            </if>
+            <if test="hls != null  and hls != ''  ">hls,
+            </if>
+            <if test="sx != null  and sx != ''  ">sx,
+            </if>
+            <if test="sex != null  and sex != ''  ">sex,
+            </if>
+            <if test="born != null  and born != ''  ">born,
+            </if>
+            <if test="pay != null  and pay != ''  ">pay,
+            </if>
+            <if test="level != null  and level != ''  ">level,
+            </if>
+            <if test="con != null  and con != ''  ">con,
+            </if>
+            <if test="conphone != null  and conphone != ''  ">conphone,
+            </if>
+            <if test="phone != null  and phone != ''  ">phone,
+            </if>
+            <if test="mobile != null  and mobile != ''  ">mobile,
+            </if>
+            <if test="st != null  and st != ''  ">st,
+            </if>
+            <if test="ct != null  and ct != ''  ">ct,
+            </if>
+            <if test="dt != null  and dt != ''  ">dt,
+            </if>
+            <if test="idcard != null  and idcard != ''  ">idcard,
+            </if>
+            <if test="unit != null  and unit != ''  ">unit,
+            </if>
+            <if test="unitphone != null  and unitphone != ''  ">unitphone,
+            </if>
+            <if test="home != null  and home != ''  ">home,
+            </if>
+            <if test="score1 != null  and score1 != ''  ">score1,
+            </if>
+            <if test="score2 != null  and score2 != ''  ">score2,
+            </if>
+            <if test="date1 != null  and date1 != ''  ">date1,
+            </if>
+            <if test="date2 != null  and date2 != ''  ">date2,
+            </if>
+            <if test="date3 != null  and date3 != ''  ">date3,
+            </if>
+            <if test="letter != null  and letter != ''  ">letter,
+            </if>
+            <if test="fzzt != null  and fzzt != ''  ">fzzt,
+            </if>
+            <if test="fxsj != null  and fxsj != ''  ">fxsj,
+            </if>
+            <if test="czsj != null  and czsj != ''  ">czsj,
+            </if>
+            <if test="djsj != null  and djsj != ''  ">djsj,
+            </if>
+            <if test="schooling != null  and schooling != ''  ">schooling,
+            </if>
+            <if test="electric != null  and electric != ''  ">electric,
+            </if>
+            <if test="ceyi != null  and ceyi != ''  ">ceyi,
+            </if>
+            <if test="fang != null  and fang != ''  ">fang,
+            </if>
+            <if test="zipai != null  and zipai != ''  ">zipai,
+            </if>
+            <if test="shou != null  and shou != ''  ">shou,
+            </if>
+            <if test="burn != null  and burn != ''  ">burn,
+            </if>
+            <if test="ton != null  and ton != ''  ">ton,
+            </if>
+            <if test="check != null  and check != ''  ">check,
+            </if>
+            <if test="pic != null  and pic != ''  ">pic,
+            </if>
+            <if test="pic2 != null  and pic2 != ''  ">pic2,
+            </if>
+            <if test="picdb != null  ">picdb,
+            </if>
+            <if test="rcmd != null  and rcmd != ''  ">rcmd,
+            </if>
+            <if test="time != null  and time != ''  ">time,
+            </if>
+            <if test="intro != null  and intro != ''  ">intro,
+            </if>
+            <if test="sg != null  and sg != ''  ">sg,
+            </if>
+            <if test="tz != null  and tz != ''  ">tz,
+            </if>
+            <if test="xy != null  and xy != ''  ">xy,
+            </if>
+            <if test="ej != null  and ej != ''  ">ej,
+            </if>
+            <if test="bsl != null  and bsl != ''  ">bsl,
+            </if>
+            <if test="lsz != null  and lsz != ''  ">lsz,
+            </if>
+            <if test="lsy != null  and lsy != ''  ">lsy,
+            </if>
+            <if test="jsz != null  and jsz != ''  ">jsz,
+            </if>
+            <if test="jsy != null  and jsy != ''  ">jsy,
+            </if>
+            <if test="hbz != null  and hbz != ''  ">hbz,
+            </if>
+            <if test="admin != null  and admin != ''  ">admin,
+            </if>
+            <if test="ip != null  and ip != ''  ">ip,
+            </if>
+            <if test="tj != null  and tj != ''  ">tj,
+            </if>
+            <if test="djr != null  and djr != ''  ">djr,
+            </if>
+            <if test="xx != null  and xx != ''  ">xx,
+            </if>
+            <if test="bx != null  and bx != ''  ">bx,
+            </if>
+            <if test="nf != null  ">nf,
+            </if>
+            <if test="lastlogin != null  ">lastlogin,
+            </if>
+            <if test="ipshow != null  and ipshow != ''  ">ipshow,
+            </if>
+            <if test="homephone != null  and homephone != ''  ">homephone,
+            </if>
+            <if test="lb1 != null  ">lb1,
+            </if>
+            <if test="lb2 != null  ">lb2,
+            </if>
+            <if test="lb3 != null  ">lb3,
+            </if>
+            <if test="xiang != null  and xiang != ''  ">xiang,
+            </if>
+            <if test="mail != null  and mail != ''  ">mail,
+            </if>
+            <if test="xingp != null  and xingp != ''  ">xingp,
+            </if>
+            <if test="mingp != null  and mingp != ''  ">mingp,
+            </if>
+            <if test="mingzu != null  and mingzu != ''  ">mingzu,
+            </if>
+            <if test="chushengdi != null  and chushengdi != ''  ">chushengdi,
+            </if>
+            <if test="jtphone != null  and jtphone != ''  ">jtphone,
+            </if>
+            <if test="shouyigx != null  and shouyigx != ''  ">shouyigx,
+            </if>
+            <if test="shouyitel != null  and shouyitel != ''  ">shouyitel,
+            </if>
+            <if test="youbian != null  and youbian != ''  ">youbian,
+            </if>
+            <if test="wage != null  and wage != ''  ">wage,
+            </if>
+            <if test="lmphone != null  and lmphone != ''  ">lmphone,
+            </if>
+            <if test="leibie != null  and leibie != ''  ">leibie,
+            </if>
+            <if test="shouyi != null  and shouyi != ''  ">shouyi,
+            </if>
+            <if test="lcpic != null  and lcpic != ''  ">lcpic,
+            </if>
+            <if test="kspic != null  and kspic != ''  ">kspic,
+            </if>
+            <if test="lcmov != null  and lcmov != ''  ">lcmov,
+            </if>
+            <if test="ksmov != null  and ksmov != ''  ">ksmov,
+            </if>
+            <if test="cz != null  and cz != ''  ">cz,
+            </if>
+            <if test="ny != null  and ny != ''  ">ny,
+            </if>
+            <if test="ls != null  and ls != ''  ">ls,
+            </if>
+            <if test="email != null  and email != ''  ">email,
+            </if>
+            <if test="xlfilename != null  and xlfilename != ''  ">xlfilename,
+            </if>
+            <if test="idzfilename != null  and idzfilename != ''  ">idzfilename,
+            </if>
+            <if test="idffilename != null  and idffilename != ''  ">idffilename,
+            </if>
+            <if test="sms != null  ">sms,
+            </if>
+            <if test="smsDate != null  and smsDate != ''  ">sms_date,
+            </if>
+            <if test="uemail != null  ">uemail,
+            </if>
+            <if test="uemailDate != null  and uemailDate != ''  ">uemail_date,
+            </if>
+            <if test="zsSms != null  ">zs_sms,
+            </if>
+            <if test="zsSmsDate != null  and zsSmsDate != ''  ">zs_sms_date,
+            </if>
+            <if test="zsEmail != null  ">zs_email,
+            </if>
+            <if test="zsEmailDate != null  and zsEmailDate != ''  ">zs_email_date,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null  and id != ''  ">#{id},
+            </if>
+            <if test="num != null  and num != ''  ">#{num},
+            </if>
+            <if test="name != null  and name != ''  ">#{name},
+            </if>
+            <if test="hls != null  and hls != ''  ">#{hls},
+            </if>
+            <if test="sx != null  and sx != ''  ">#{sx},
+            </if>
+            <if test="sex != null  and sex != ''  ">#{sex},
+            </if>
+            <if test="born != null  and born != ''  ">#{born},
+            </if>
+            <if test="pay != null  and pay != ''  ">#{pay},
+            </if>
+            <if test="level != null  and level != ''  ">#{level},
+            </if>
+            <if test="con != null  and con != ''  ">#{con},
+            </if>
+            <if test="conphone != null  and conphone != ''  ">#{conphone},
+            </if>
+            <if test="phone != null  and phone != ''  ">#{phone},
+            </if>
+            <if test="mobile != null  and mobile != ''  ">#{mobile},
+            </if>
+            <if test="st != null  and st != ''  ">#{st},
+            </if>
+            <if test="ct != null  and ct != ''  ">#{ct},
+            </if>
+            <if test="dt != null  and dt != ''  ">#{dt},
+            </if>
+            <if test="idcard != null  and idcard != ''  ">#{idcard},
+            </if>
+            <if test="unit != null  and unit != ''  ">#{unit},
+            </if>
+            <if test="unitphone != null  and unitphone != ''  ">#{unitphone},
+            </if>
+            <if test="home != null  and home != ''  ">#{home},
+            </if>
+            <if test="score1 != null  and score1 != ''  ">#{score1},
+            </if>
+            <if test="score2 != null  and score2 != ''  ">#{score2},
+            </if>
+            <if test="date1 != null  and date1 != ''  ">#{date1},
+            </if>
+            <if test="date2 != null  and date2 != ''  ">#{date2},
+            </if>
+            <if test="date3 != null  and date3 != ''  ">#{date3},
+            </if>
+            <if test="letter != null  and letter != ''  ">#{letter},
+            </if>
+            <if test="fzzt != null  and fzzt != ''  ">#{fzzt},
+            </if>
+            <if test="fxsj != null  and fxsj != ''  ">#{fxsj},
+            </if>
+            <if test="czsj != null  and czsj != ''  ">#{czsj},
+            </if>
+            <if test="djsj != null  and djsj != ''  ">#{djsj},
+            </if>
+            <if test="schooling != null  and schooling != ''  ">#{schooling},
+            </if>
+            <if test="electric != null  and electric != ''  ">#{electric},
+            </if>
+            <if test="ceyi != null  and ceyi != ''  ">#{ceyi},
+            </if>
+            <if test="fang != null  and fang != ''  ">#{fang},
+            </if>
+            <if test="zipai != null  and zipai != ''  ">#{zipai},
+            </if>
+            <if test="shou != null  and shou != ''  ">#{shou},
+            </if>
+            <if test="burn != null  and burn != ''  ">#{burn},
+            </if>
+            <if test="ton != null  and ton != ''  ">#{ton},
+            </if>
+            <if test="check != null  and check != ''  ">#{check},
+            </if>
+            <if test="pic != null  and pic != ''  ">#{pic},
+            </if>
+            <if test="pic2 != null  and pic2 != ''  ">#{pic2},
+            </if>
+            <if test="picdb != null  ">#{picdb},
+            </if>
+            <if test="rcmd != null  and rcmd != ''  ">#{rcmd},
+            </if>
+            <if test="time != null  and time != ''  ">#{time},
+            </if>
+            <if test="intro != null  and intro != ''  ">#{intro},
+            </if>
+            <if test="sg != null  and sg != ''  ">#{sg},
+            </if>
+            <if test="tz != null  and tz != ''  ">#{tz},
+            </if>
+            <if test="xy != null  and xy != ''  ">#{xy},
+            </if>
+            <if test="ej != null  and ej != ''  ">#{ej},
+            </if>
+            <if test="bsl != null  and bsl != ''  ">#{bsl},
+            </if>
+            <if test="lsz != null  and lsz != ''  ">#{lsz},
+            </if>
+            <if test="lsy != null  and lsy != ''  ">#{lsy},
+            </if>
+            <if test="jsz != null  and jsz != ''  ">#{jsz},
+            </if>
+            <if test="jsy != null  and jsy != ''  ">#{jsy},
+            </if>
+            <if test="hbz != null  and hbz != ''  ">#{hbz},
+            </if>
+            <if test="admin != null  and admin != ''  ">#{admin},
+            </if>
+            <if test="ip != null  and ip != ''  ">#{ip},
+            </if>
+            <if test="tj != null  and tj != ''  ">#{tj},
+            </if>
+            <if test="djr != null  and djr != ''  ">#{djr},
+            </if>
+            <if test="xx != null  and xx != ''  ">#{xx},
+            </if>
+            <if test="bx != null  and bx != ''  ">#{bx},
+            </if>
+            <if test="nf != null  ">#{nf},
+            </if>
+            <if test="lastlogin != null  ">#{lastlogin},
+            </if>
+            <if test="ipshow != null  and ipshow != ''  ">#{ipshow},
+            </if>
+            <if test="homephone != null  and homephone != ''  ">#{homephone},
+            </if>
+            <if test="lb1 != null  ">#{lb1},
+            </if>
+            <if test="lb2 != null  ">#{lb2},
+            </if>
+            <if test="lb3 != null  ">#{lb3},
+            </if>
+            <if test="xiang != null  and xiang != ''  ">#{xiang},
+            </if>
+            <if test="mail != null  and mail != ''  ">#{mail},
+            </if>
+            <if test="xingp != null  and xingp != ''  ">#{xingp},
+            </if>
+            <if test="mingp != null  and mingp != ''  ">#{mingp},
+            </if>
+            <if test="mingzu != null  and mingzu != ''  ">#{mingzu},
+            </if>
+            <if test="chushengdi != null  and chushengdi != ''  ">#{chushengdi},
+            </if>
+            <if test="jtphone != null  and jtphone != ''  ">#{jtphone},
+            </if>
+            <if test="shouyigx != null  and shouyigx != ''  ">#{shouyigx},
+            </if>
+            <if test="shouyitel != null  and shouyitel != ''  ">#{shouyitel},
+            </if>
+            <if test="youbian != null  and youbian != ''  ">#{youbian},
+            </if>
+            <if test="wage != null  and wage != ''  ">#{wage},
+            </if>
+            <if test="lmphone != null  and lmphone != ''  ">#{lmphone},
+            </if>
+            <if test="leibie != null  and leibie != ''  ">#{leibie},
+            </if>
+            <if test="shouyi != null  and shouyi != ''  ">#{shouyi},
+            </if>
+            <if test="lcpic != null  and lcpic != ''  ">#{lcpic},
+            </if>
+            <if test="kspic != null  and kspic != ''  ">#{kspic},
+            </if>
+            <if test="lcmov != null  and lcmov != ''  ">#{lcmov},
+            </if>
+            <if test="ksmov != null  and ksmov != ''  ">#{ksmov},
+            </if>
+            <if test="cz != null  and cz != ''  ">#{cz},
+            </if>
+            <if test="ny != null  and ny != ''  ">#{ny},
+            </if>
+            <if test="ls != null  and ls != ''  ">#{ls},
+            </if>
+            <if test="email != null  and email != ''  ">#{email},
+            </if>
+            <if test="xlfilename != null  and xlfilename != ''  ">#{xlfilename},
+            </if>
+            <if test="idzfilename != null  and idzfilename != ''  ">#{idzfilename},
+            </if>
+            <if test="idffilename != null  and idffilename != ''  ">#{idffilename},
+            </if>
+            <if test="sms != null  ">#{sms},
+            </if>
+            <if test="smsDate != null  and smsDate != ''  ">#{smsDate},
+            </if>
+            <if test="uemail != null  ">#{uemail},
+            </if>
+            <if test="uemailDate != null  and uemailDate != ''  ">#{uemailDate},
+            </if>
+            <if test="zsSms != null  ">#{zsSms},
+            </if>
+            <if test="zsSmsDate != null  and zsSmsDate != ''  ">#{zsSmsDate},
+            </if>
+            <if test="zsEmail != null  ">#{zsEmail},
+            </if>
+            <if test="zsEmailDate != null  and zsEmailDate != ''  ">#{zsEmailDate},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateInformation" parameterType="Information">
+        update information
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="id != null  and id != ''  ">id = #{id},
+            </if>
+            <if test="num != null  and num != ''  ">num = #{num},
+            </if>
+            <if test="name != null  and name != ''  ">name = #{name},
+            </if>
+            <if test="hls != null  and hls != ''  ">hls = #{hls},
+            </if>
+            <if test="sx != null  and sx != ''  ">sx = #{sx},
+            </if>
+            <if test="sex != null  and sex != ''  ">sex = #{sex},
+            </if>
+            <if test="born != null  and born != ''  ">born = #{born},
+            </if>
+            <if test="pay != null  and pay != ''  ">pay = #{pay},
+            </if>
+            <if test="level != null  and level != ''  ">level = #{level},
+            </if>
+            <if test="con != null  and con != ''  ">con = #{con},
+            </if>
+            <if test="conphone != null  and conphone != ''  ">conphone = #{conphone},
+            </if>
+            <if test="phone != null  and phone != ''  ">phone = #{phone},
+            </if>
+            <if test="mobile != null  and mobile != ''  ">mobile = #{mobile},
+            </if>
+            <if test="st != null  and st != ''  ">st = #{st},
+            </if>
+            <if test="ct != null  and ct != ''  ">ct = #{ct},
+            </if>
+            <if test="dt != null  and dt != ''  ">dt = #{dt},
+            </if>
+            <if test="idcard != null  and idcard != ''  ">idcard = #{idcard},
+            </if>
+            <if test="unit != null  and unit != ''  ">unit = #{unit},
+            </if>
+            <if test="unitphone != null  and unitphone != ''  ">unitphone = #{unitphone},
+            </if>
+            <if test="home != null  and home != ''  ">home = #{home},
+            </if>
+            <if test="score1 != null  and score1 != ''  ">score1 = #{score1},
+            </if>
+            <if test="score2 != null  and score2 != ''  ">score2 = #{score2},
+            </if>
+            <if test="date1 != null  and date1 != ''  ">date1 = #{date1},
+            </if>
+            <if test="date2 != null  and date2 != ''  ">date2 = #{date2},
+            </if>
+            <if test="date3 != null  and date3 != ''  ">date3 = #{date3},
+            </if>
+            <if test="letter != null  and letter != ''  ">letter = #{letter},
+            </if>
+            <if test="fzzt != null  and fzzt != ''  ">fzzt = #{fzzt},
+            </if>
+            <if test="fxsj != null  and fxsj != ''  ">fxsj = #{fxsj},
+            </if>
+            <if test="czsj != null  and czsj != ''  ">czsj = #{czsj},
+            </if>
+            <if test="djsj != null  and djsj != ''  ">djsj = #{djsj},
+            </if>
+            <if test="schooling != null  and schooling != ''  ">schooling = #{schooling},
+            </if>
+            <if test="electric != null  and electric != ''  ">electric = #{electric},
+            </if>
+            <if test="ceyi != null  and ceyi != ''  ">ceyi = #{ceyi},
+            </if>
+            <if test="fang != null  and fang != ''  ">fang = #{fang},
+            </if>
+            <if test="zipai != null  and zipai != ''  ">zipai = #{zipai},
+            </if>
+            <if test="shou != null  and shou != ''  ">shou = #{shou},
+            </if>
+            <if test="burn != null  and burn != ''  ">burn = #{burn},
+            </if>
+            <if test="ton != null  and ton != ''  ">ton = #{ton},
+            </if>
+            <if test="check != null  and check != ''  ">check = #{check},
+            </if>
+            <if test="pic != null  and pic != ''  ">pic = #{pic},
+            </if>
+            <if test="pic2 != null  and pic2 != ''  ">pic2 = #{pic2},
+            </if>
+            <if test="picdb != null  ">picdb = #{picdb},
+            </if>
+            <if test="rcmd != null  and rcmd != ''  ">rcmd = #{rcmd},
+            </if>
+            <if test="time != null  and time != ''  ">time = #{time},
+            </if>
+            <if test="intro != null  and intro != ''  ">intro = #{intro},
+            </if>
+            <if test="sg != null  and sg != ''  ">sg = #{sg},
+            </if>
+            <if test="tz != null  and tz != ''  ">tz = #{tz},
+            </if>
+            <if test="xy != null  and xy != ''  ">xy = #{xy},
+            </if>
+            <if test="ej != null  and ej != ''  ">ej = #{ej},
+            </if>
+            <if test="bsl != null  and bsl != ''  ">bsl = #{bsl},
+            </if>
+            <if test="lsz != null  and lsz != ''  ">lsz = #{lsz},
+            </if>
+            <if test="lsy != null  and lsy != ''  ">lsy = #{lsy},
+            </if>
+            <if test="jsz != null  and jsz != ''  ">jsz = #{jsz},
+            </if>
+            <if test="jsy != null  and jsy != ''  ">jsy = #{jsy},
+            </if>
+            <if test="hbz != null  and hbz != ''  ">hbz = #{hbz},
+            </if>
+            <if test="admin != null  and admin != ''  ">admin = #{admin},
+            </if>
+            <if test="ip != null  and ip != ''  ">ip = #{ip},
+            </if>
+            <if test="tj != null  and tj != ''  ">tj = #{tj},
+            </if>
+            <if test="djr != null  and djr != ''  ">djr = #{djr},
+            </if>
+            <if test="xx != null  and xx != ''  ">xx = #{xx},
+            </if>
+            <if test="bx != null  and bx != ''  ">bx = #{bx},
+            </if>
+            <if test="nf != null  ">nf = #{nf},
+            </if>
+            <if test="lastlogin != null  ">lastlogin = #{lastlogin},
+            </if>
+            <if test="ipshow != null  and ipshow != ''  ">ipshow = #{ipshow},
+            </if>
+            <if test="homephone != null  and homephone != ''  ">homephone = #{homephone},
+            </if>
+            <if test="lb1 != null  ">lb1 = #{lb1},
+            </if>
+            <if test="lb2 != null  ">lb2 = #{lb2},
+            </if>
+            <if test="lb3 != null  ">lb3 = #{lb3},
+            </if>
+            <if test="xiang != null  and xiang != ''  ">xiang = #{xiang},
+            </if>
+            <if test="mail != null  and mail != ''  ">mail = #{mail},
+            </if>
+            <if test="xingp != null  and xingp != ''  ">xingp = #{xingp},
+            </if>
+            <if test="mingp != null  and mingp != ''  ">mingp = #{mingp},
+            </if>
+            <if test="mingzu != null  and mingzu != ''  ">mingzu = #{mingzu},
+            </if>
+            <if test="chushengdi != null  and chushengdi != ''  ">chushengdi = #{chushengdi},
+            </if>
+            <if test="jtphone != null  and jtphone != ''  ">jtphone = #{jtphone},
+            </if>
+            <if test="shouyigx != null  and shouyigx != ''  ">shouyigx = #{shouyigx},
+            </if>
+            <if test="shouyitel != null  and shouyitel != ''  ">shouyitel = #{shouyitel},
+            </if>
+            <if test="youbian != null  and youbian != ''  ">youbian = #{youbian},
+            </if>
+            <if test="wage != null  and wage != ''  ">wage = #{wage},
+            </if>
+            <if test="lmphone != null  and lmphone != ''  ">lmphone = #{lmphone},
+            </if>
+            <if test="leibie != null  and leibie != ''  ">leibie = #{leibie},
+            </if>
+            <if test="shouyi != null  and shouyi != ''  ">shouyi = #{shouyi},
+            </if>
+            <if test="lcpic != null  and lcpic != ''  ">lcpic = #{lcpic},
+            </if>
+            <if test="kspic != null  and kspic != ''  ">kspic = #{kspic},
+            </if>
+            <if test="lcmov != null  and lcmov != ''  ">lcmov = #{lcmov},
+            </if>
+            <if test="ksmov != null  and ksmov != ''  ">ksmov = #{ksmov},
+            </if>
+            <if test="cz != null  and cz != ''  ">cz = #{cz},
+            </if>
+            <if test="ny != null  and ny != ''  ">ny = #{ny},
+            </if>
+            <if test="ls != null  and ls != ''  ">ls = #{ls},
+            </if>
+            <if test="email != null  and email != ''  ">email = #{email},
+            </if>
+            <if test="xlfilename != null  and xlfilename != ''  ">xlfilename = #{xlfilename},
+            </if>
+            <if test="idzfilename != null  and idzfilename != ''  ">idzfilename = #{idzfilename},
+            </if>
+            <if test="idffilename != null  and idffilename != ''  ">idffilename = #{idffilename},
+            </if>
+            <if test="sms != null  ">sms = #{sms},
+            </if>
+            <if test="smsDate != null  and smsDate != ''  ">sms_date = #{smsDate},
+            </if>
+            <if test="uemail != null  ">uemail = #{uemail},
+            </if>
+            <if test="uemailDate != null  and uemailDate != ''  ">uemail_date = #{uemailDate},
+            </if>
+            <if test="zsSms != null  ">zs_sms = #{zsSms},
+            </if>
+            <if test="zsSmsDate != null  and zsSmsDate != ''  ">zs_sms_date = #{zsSmsDate},
+            </if>
+            <if test="zsEmail != null  ">zs_email = #{zsEmail},
+            </if>
+            <if test="zsEmailDate != null  and zsEmailDate != ''  ">zs_email_date = #{zsEmailDate},
+            </if>
+        </trim>
+        where ID1 = #{iD1}
+    </update>
+
+    <delete id="deleteInformationById" parameterType="Integer">
+        delete from information where ID1 = #{iD1}
+    </delete>
+
+    <delete id="deleteInformationByIds" parameterType="String">
+        delete from information where ID1 in
+        <foreach item="iD1" collection="array" open="(" separator="," close=")">
+            #{iD1}
+        </foreach>
+    </delete>
+
+
+    <select id="selectList" parameterType="Information" resultMap="InformationResult">
+        <include refid="selectInformationVo"/>
+        <where>
+            <if test="searchType!=null and searchType!='' and searchContent!=null and searchContent!=''">
+                <bind name="search" value="'%' + searchContent + '%'" />
+                <choose>
+                    <when test="searchType == 1">
+                        and (id like #{search} or name like #{search} or st like #{search} or ct like #{search} or dt like #{search} or sex like #{search}
+                        or level like #{search} or phone like #{search} or idcard like #{search} or unit like #{search} or unitphone like #{search}
+                        or home like #{search} or electric like #{search} or burn like #{search} or wage like #{search} or ton like #{search}
+                        or  `check` like #{search} or `email` like #{search} or `mail` like #{search})
+                    </when>
+                    <when test="searchType == 2">
+                        and id like #{search}
+                    </when>
+                    <when test="searchType == 3">
+                        and name like #{search}
+                    </when>
+                    <when test="searchType == 4">
+                        and idcard like #{search}
+                    </when>
+                    <when test="searchType == 5">
+                        and level like #{search}
+                    </when>
+                    <when test="searchType == 6">
+                        and sex like #{search}
+                    </when>
+                    <when test="searchType == 7">
+                        and home like #{search}
+                    </when>
+                    <when test="searchType == 8">
+                        and  (electric like #{search} or ceyi like #{search} or fang like #{search} or zipai like #{search}
+                        or shou like #{search} or burn like #{search} or ton like #{search})
+                    </when>
+                    <when test="searchType == 9">
+                        and `check` like #{search}
+                    </when>
+                    <when test="searchType == 10">
+                        and phone like #{search}
+                    </when>
+                    <when test="searchType == 11">
+                        and st like #{search}
+                    </when>
+                    <when test="searchType == 12">
+                        and ct like #{search}
+                    </when>
+                    <when test="searchType == 13">
+                        and dt like #{search}
+                    </when>
+                    <when test="searchType == 14">
+                        and `email` like #{search} or `mail` like #{search}
+                    </when>
+                    <otherwise></otherwise>
+                </choose>
+            </if>
+
+
+
+            <if test="id != null  and id != '' ">and id = #{id}
+            </if>
+            <if test="num != null  and num != '' ">and num = #{num}
+            </if>
+            <if test="name != null  and name != '' ">and name = #{name}
+            </if>
+            <if test="hls != null  and hls != '' ">and hls = #{hls}
+            </if>
+            <if test="sx != null  and sx != '' ">and sx = #{sx}
+            </if>
+            <if test="sex != null  and sex != '' ">and sex = #{sex}
+            </if>
+            <if test="born != null  and born != '' ">and born = #{born}
+            </if>
+            <if test="pay != null  and pay != '' ">and pay = #{pay}
+            </if>
+            <if test="level != null  and level != '' ">and level = #{level}
+            </if>
+            <if test="con != null  and con != '' ">and con = #{con}
+            </if>
+            <if test="conphone != null  and conphone != '' ">and conphone = #{conphone}
+            </if>
+            <if test="phone != null  and phone != '' ">and phone = #{phone}
+            </if>
+            <if test="mobile != null  and mobile != '' ">and mobile = #{mobile}
+            </if>
+            <if test="st != null  and st != '' ">and st = #{st}
+            </if>
+            <if test="ct != null  and ct != '' ">and ct = #{ct}
+            </if>
+            <if test="dt != null  and dt != '' ">and dt = #{dt}
+            </if>
+            <if test="idcard != null  and idcard != '' ">and idcard = #{idcard}
+            </if>
+            <if test="unit != null  and unit != '' ">and unit = #{unit}
+            </if>
+            <if test="unitphone != null  and unitphone != '' ">and unitphone = #{unitphone}
+            </if>
+            <if test="home != null  and home != '' ">and home = #{home}
+            </if>
+            <if test="score1 != null  and score1 != '' ">and score1 = #{score1}
+            </if>
+            <if test="score2 != null  and score2 != '' ">and score2 = #{score2}
+            </if>
+            <if test="date1 != null  and date1 != '' ">and date1 = #{date1}
+            </if>
+            <if test="date2 != null  and date2 != '' ">and date2 = #{date2}
+            </if>
+            <if test="date3 != null  and date3 != '' ">and date3 = #{date3}
+            </if>
+            <if test="letter != null  and letter != '' ">and letter = #{letter}
+            </if>
+            <if test="fzzt != null  and fzzt != '' ">and fzzt = #{fzzt}
+            </if>
+            <if test="fxsj != null  and fxsj != '' ">and fxsj = #{fxsj}
+            </if>
+            <if test="czsj != null  and czsj != '' ">and czsj = #{czsj}
+            </if>
+            <if test="djsj != null  and djsj != '' ">and djsj = #{djsj}
+            </if>
+            <if test="schooling != null  and schooling != '' ">and schooling = #{schooling}
+            </if>
+            <if test="electric != null  and electric != '' ">and electric = #{electric}
+            </if>
+            <if test="ceyi != null  and ceyi != '' ">and ceyi = #{ceyi}
+            </if>
+            <if test="fang != null  and fang != '' ">and fang = #{fang}
+            </if>
+            <if test="zipai != null  and zipai != '' ">and zipai = #{zipai}
+            </if>
+            <if test="shou != null  and shou != '' ">and shou = #{shou}
+            </if>
+            <if test="burn != null  and burn != '' ">and burn = #{burn}
+            </if>
+            <if test="ton != null  and ton != '' ">and ton = #{ton}
+            </if>
+            <if test="check != null  and check != '' ">and check = #{check}
+            </if>
+            <if test="pic != null  and pic != '' ">and pic = #{pic}
+            </if>
+            <if test="pic2 != null  and pic2 != '' ">and pic2 = #{pic2}
+            </if>
+            <if test="picdb != null ">and picdb = #{picdb}
+            </if>
+            <if test="rcmd != null  and rcmd != '' ">and rcmd = #{rcmd}
+            </if>
+            <if test="time != null  and time != '' ">and time = #{time}
+            </if>
+            <if test="intro != null  and intro != '' ">and intro = #{intro}
+            </if>
+            <if test="sg != null  and sg != '' ">and sg = #{sg}
+            </if>
+            <if test="tz != null  and tz != '' ">and tz = #{tz}
+            </if>
+            <if test="xy != null  and xy != '' ">and xy = #{xy}
+            </if>
+            <if test="ej != null  and ej != '' ">and ej = #{ej}
+            </if>
+            <if test="bsl != null  and bsl != '' ">and bsl = #{bsl}
+            </if>
+            <if test="lsz != null  and lsz != '' ">and lsz = #{lsz}
+            </if>
+            <if test="lsy != null  and lsy != '' ">and lsy = #{lsy}
+            </if>
+            <if test="jsz != null  and jsz != '' ">and jsz = #{jsz}
+            </if>
+            <if test="jsy != null  and jsy != '' ">and jsy = #{jsy}
+            </if>
+            <if test="hbz != null  and hbz != '' ">and hbz = #{hbz}
+            </if>
+            <if test="admin != null  and admin != '' ">and admin = #{admin}
+            </if>
+            <if test="ip != null  and ip != '' ">and ip = #{ip}
+            </if>
+            <if test="tj != null  and tj != '' ">and tj = #{tj}
+            </if>
+            <if test="djr != null  and djr != '' ">and djr = #{djr}
+            </if>
+            <if test="xx != null  and xx != '' ">and xx = #{xx}
+            </if>
+            <if test="bx != null  and bx != '' ">and bx = #{bx}
+            </if>
+            <if test="nf != null ">and nf = #{nf}
+            </if>
+            <if test="lastlogin != null ">and lastlogin = #{lastlogin}
+            </if>
+            <if test="ipshow != null  and ipshow != '' ">and ipshow = #{ipshow}
+            </if>
+            <if test="homephone != null  and homephone != '' ">and homephone = #{homephone}
+            </if>
+            <if test="lb1 != null ">and lb1 = #{lb1}
+            </if>
+            <if test="lb2 != null ">and lb2 = #{lb2}
+            </if>
+            <if test="lb3 != null ">and lb3 = #{lb3}
+            </if>
+            <if test="xiang != null  and xiang != '' ">and xiang = #{xiang}
+            </if>
+            <if test="mail != null  and mail != '' ">and mail = #{mail}
+            </if>
+            <if test="xingp != null  and xingp != '' ">and xingp = #{xingp}
+            </if>
+            <if test="mingp != null  and mingp != '' ">and mingp = #{mingp}
+            </if>
+            <if test="mingzu != null  and mingzu != '' ">and mingzu = #{mingzu}
+            </if>
+            <if test="chushengdi != null  and chushengdi != '' ">and chushengdi = #{chushengdi}
+            </if>
+            <if test="jtphone != null  and jtphone != '' ">and jtphone = #{jtphone}
+            </if>
+            <if test="shouyigx != null  and shouyigx != '' ">and shouyigx = #{shouyigx}
+            </if>
+            <if test="shouyitel != null  and shouyitel != '' ">and shouyitel = #{shouyitel}
+            </if>
+            <if test="youbian != null  and youbian != '' ">and youbian = #{youbian}
+            </if>
+            <if test="wage != null  and wage != '' ">and wage = #{wage}
+            </if>
+            <if test="lmphone != null  and lmphone != '' ">and lmphone = #{lmphone}
+            </if>
+            <if test="leibie != null  and leibie != '' ">and leibie = #{leibie}
+            </if>
+            <if test="shouyi != null  and shouyi != '' ">and shouyi = #{shouyi}
+            </if>
+            <if test="lcpic != null  and lcpic != '' ">and lcpic = #{lcpic}
+            </if>
+            <if test="kspic != null  and kspic != '' ">and kspic = #{kspic}
+            </if>
+            <if test="lcmov != null  and lcmov != '' ">and lcmov = #{lcmov}
+            </if>
+            <if test="ksmov != null  and ksmov != '' ">and ksmov = #{ksmov}
+            </if>
+            <if test="cz != null  and cz != '' ">and cz = #{cz}
+            </if>
+            <if test="ny != null  and ny != '' ">and ny = #{ny}
+            </if>
+            <if test="ls != null  and ls != '' ">and ls = #{ls}
+            </if>
+            <if test="email != null  and email != '' ">and email = #{email}
+            </if>
+            <if test="xlfilename != null  and xlfilename != '' ">and xlfilename = #{xlfilename}
+            </if>
+            <if test="idzfilename != null  and idzfilename != '' ">and idzfilename = #{idzfilename}
+            </if>
+            <if test="idffilename != null  and idffilename != '' ">and idffilename = #{idffilename}
+            </if>
+            <if test="sms != null ">and sms = #{sms}
+            </if>
+            <if test="smsDate != null  and smsDate != '' ">and sms_date = #{smsDate}
+            </if>
+            <if test="uemail != null ">and uemail = #{uemail}
+            </if>
+            <if test="uemailDate != null  and uemailDate != '' ">and uemail_date = #{uemailDate}
+            </if>
+            <if test="zsSms != null ">and zs_sms = #{zsSms}
+            </if>
+            <if test="zsSmsDate != null  and zsSmsDate != '' ">and zs_sms_date = #{zsSmsDate}
+            </if>
+            <if test="zsEmail != null ">and zs_email = #{zsEmail}
+            </if>
+            <if test="zsEmailDate != null  and zsEmailDate != '' ">and zs_email_date = #{zsEmailDate}
+            </if>
+        </where>
+    </select>
+
+</mapper>
