@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.web.mapper.biz.ZzTestMapper">
+
+  <resultMap type="com.ruoyi.web.domain.ZzTest" id="ZzTestResult">
+    <result property="id" column="id"/>
+    <result property="name" column="name"/>
+    <result property="age" column="age"/>
+    <result property="createTime" column="create_time"/>
+    <result property="createUserId" column="create_user_id"/>
+  </resultMap>
+
+  <sql id="selectZzTestVo">
+    select id, name, age, create_time, create_user_id from zz_test
+  </sql>
+
+  <select id="selectZzTestList" parameterType="ZzTest" resultMap="ZzTestResult">
+    <include refid="selectZzTestVo"/>
+    <where>
+      <if test="id != null ">and id = #{id}
+      </if>
+      <if test="name != null  and name != '' ">and name = #{name}
+      </if>
+      <if test="age != null ">and age = #{age}
+      </if>
+      <if test="createTime != null ">and create_time = #{createTime}
+      </if>
+      <if test="createUserId != null ">and create_user_id = #{createUserId}
+      </if>
+    </where>
+  </select>
+
+  <select id="selectZzTestById" parameterType="Long" resultMap="ZzTestResult">
+    <include refid="selectZzTestVo"/>
+    where id = #{id}
+  </select>
+
+  <insert id="insertZzTest" parameterType="ZzTest">
+    insert into zz_test
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null  ">id,
+      </if>
+      <if test="name != null  and name != ''  ">name,
+      </if>
+      <if test="age != null  ">age,
+      </if>
+      <if test="createTime != null  ">create_time,
+      </if>
+      <if test="createUserId != null  ">create_user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null  ">#{id},
+      </if>
+      <if test="name != null  and name != ''  ">#{name},
+      </if>
+      <if test="age != null  ">#{age},
+      </if>
+      <if test="createTime != null  ">#{createTime},
+      </if>
+      <if test="createUserId != null  ">#{createUserId},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateZzTest" parameterType="ZzTest">
+    update zz_test
+    <trim prefix="SET" suffixOverrides=",">
+      <if test="name != null  and name != ''  ">name = #{name},
+      </if>
+      <if test="age != null  ">age = #{age},
+      </if>
+      <if test="createTime != null  ">create_time = #{createTime},
+      </if>
+      <if test="createUserId != null  ">create_user_id = #{createUserId},
+      </if>
+    </trim>
+    where id = #{id}
+  </update>
+
+  <delete id="deleteZzTestById" parameterType="Long">
+    delete from zz_test where id = #{id}
+  </delete>
+
+  <delete id="deleteZzTestByIds" parameterType="String">
+    delete from zz_test where id in
+    <foreach item="id" collection="array" open="(" separator="," close=")">
+      #{id}
+    </foreach>
+  </delete>
+
+</mapper>
